@@ -906,6 +906,11 @@ article {
 
     }
 
+    #bienvenidaText p {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
     article {
         padding: 0 0;
     }
@@ -934,6 +939,10 @@ article {
 
     .container-info::after {
         display: none;
+    }
+
+    .left-info{
+        margin: 0.5rem 0.5rem;
     }
 
     .left-info,
