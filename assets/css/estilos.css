@@ -570,7 +570,7 @@ article {
     padding: 5% 0;
 }
 
-.container-info::after{
+.container-info::after {
     content: '';
     position: absolute;
     bottom: -20%;
@@ -925,6 +925,24 @@ article {
     .item1,
     .item3 {
         display: none;
+    }
+
+    .container-info {
+        flex-flow: column;
+        width: 90%;
+    }
+
+    .container-info::after {
+        display: none;
+    }
+
+    .left-info,
+    .right-info {
+        width: auto;
+    }
+
+    .grid-info{
+        margin-top: 2rem;
     }
 
     #fraseAnanda::after {
