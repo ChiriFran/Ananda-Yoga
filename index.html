@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Ananda Yoga</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Estilos -->
+    <link rel="stylesheet" href="./assets/css/normalize.css">
+    <link rel="stylesheet" href="./assets/css/estilos.css">
+    <link rel="icon" href="./assets/logo/logo.png">
+    <!-- Boostrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <!-- Canonical Url -->
+    <link rel="canonical" href="https://ananda-yoga.com.ar">
+    <!-- Robotags -->
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="publisher" content="Coding Solutions Arg">
+    <!-- Description & Keywords -->
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <!-- Metadatos Open Graph básicos / Compartir en redes sociales-->
+    <meta property="og:title" content="Ananda Yoga">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="https://ananda-yoga.com.ar">
+    <meta property="og:site_name" content="Ananda Yoga">
+    <meta property="og:locale" content="es_AR">
+</head>
+
+<body>
+    <header id="headerContainer">
+        <section id="logoContainer">
+            <a href="./index.html" title="Inicio">
+                <img src="./assets/logo/logo.png" alt="Ananda Yoga" id="logoImg" title="Ananda Yoga">
+            </a>
+        </section>
+        <nav id="navMenu" aria-label="Barra de navegación">
+            <div id="closeNavIcon" class="bi bi-x-lg"></div>
+            <ul>
+                <li><a href="#Yoga" title="Servicios">Yoga & Meditacion</a></li>
+                <li><a href="#valores" title="Valores">Clases & Eventos</a></li>
+            </ul>
+            <div class="audio-player">
+                <audio id="audio" preload="metadata" src="./assets/meditacion/Meditación.mp3"></audio>
+                <div class="controls">
+                    <button id="playPause" class="play"></button>
+                    <input type="range" id="seekBar" value="0" min="0" step="1">
+                    <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                </div>
+            </div>
+
+        </nav>
+        <div id="navIcon" class="bi bi-list"></div>
+    </header>
+
+
+    <div class="hero-slider">
+        <div class="hero-slide">
+            <div class="slide-content">
+                <img src="./assets/img/background/hero1.jpeg"
+                    alt="Clase de yoga con vista al lago de Embalse, Cordoba.">
+                <h2>ANANDA YOGA</h2>
+                <p>Espacio dedicado al bienestar y la armonia</p>
+            </div>
+        </div>
+        <div class="hero-slide">
+            <div class="slide-content">
+                <img src="./assets/img/eventos/evento-3.jpeg" alt="Evento">
+                <h2>Clases & Eventos</h2>
+                <p>Forma parte de nustra comunidad y enterate de todas las clases y eventos</p>
+            </div>
+        </div>
+        <div class="hero-slide">
+            <div class="slide-content">
+                <img src="./assets/img/background/clases-charlas.webp" alt="Charlas y cursos">
+                <h2>Charlas & Cursos</h2>
+                <p>Unite a nuestras charlas sobre salud, alimentacion, medicinas alternativas, y mucho mas.</p>
+            </div>
+        </div>
+
+        <!-- Dots for navigation -->
+        <div class="slider-dots">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+
+    <div id="bienvenidaContainer">
+        <div id="bienvenidaText">
+            <p>¡Bienvenidos a Ananda Yoga! Soy Laura, y me emociona abrir este espacion donde el yoga y la meditacion se
+                encuentran para guiarnos hacie el equilibrio y la paz interior.</p>
+            <p>Aqui podras encontrar consejos practicos, reflexiones y recursos tanto para tu practica de yoga como
+                Para tus momentos de meditación.</p>
+            <p>Además, será un lugar para compartir experiencias, participar de charlas y eventos. Seguinos en las redes
+                sociales y enterate de todas las novedades.</p>
+            <div id="bienvenidaRedes">
+                <a href="#">
+                    <img src="./assets/icons/instagram.svg" alt="Instagrram">
+                    <p>ananda.yoga.lv</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <article>
+        <div class="gridContainer">
+            <!-- fila 1 -->
+            <div class="gridItem item1">
+                <img src="./assets/img/background/diseño-galaxia.jpeg" alt="">
+            </div>
+            <div class="gridItem item2">
+                <img src="./assets/img/background/ananda-significado.svg" alt="">
+            </div>
+            <div class="gridItem item3">
+                <img src="./assets/img/background/diseño-galaxia.jpeg" alt="">
+
+            </div>
+
+            <!-- fila 2 -->
+            <div class="gridItem item4">
+                <img src="./assets/img/background/diseño-galaxia-nubes.jpeg" alt="">
+            </div>
+            <div class="gridItem item5">
+                <img src="./assets/img/background/frase-breve.svg" alt="">
+            </div>
+            <div class="gridItem item6">
+                <img src="./assets/img/background/diseño-galaxia-nubes.jpeg" alt="">
+            </div>
+
+            <!-- fila 3 -->
+            <div class="gridItem item7">
+                <img src="./assets/img/embalse/embalse-3.jpeg" alt="">
+            </div>
+            <div class="gridItem item8">
+                <img src="./assets/img/background/final-profesorado.png" alt="">
+            </div>
+            <div class="gridItem item9">
+                <img src="./assets/img/embalse/embalse-4.jpeg" alt="">
+            </div>
+        </div>
+    </article>
+
+    <div id="informacionPersonalContainer">
+        <div class="container-info">
+            <div class="left-info">
+                <h1 class="container-info-title">Laura Valiconto</h1>
+                <h2 class="container-info-subtitle">Instructora de Yoga</h2>
+                <div class="grid-info">
+                    <button class="grid-item-info" onclick="showCategory('eventos')">Eventos</button>
+                    <button class="grid-item-info" onclick="showCategory('clases')">Clases</button>
+                    <button class="grid-item-info" onclick="showCategory('certificados')">Certificados</button>
+                </div>
+            </div>
+
+            <div class="right-info">
+                <div class="category-header-info">
+                    <button class="arrow-info" onclick="prevSlide()">←</button>
+                    <h3 id="category-title-info"></h3>
+                    <button class="arrow-info" onclick="nextSlide()">→</button>
+                </div>
+                <div class="category-content-info">
+                    <div id="certificados" class="category-info active-info">
+                        <div class="slider-info">
+                            <img src="./assets/img/certificados/certificado-1.jpeg" alt="Certificado 1"
+                                class="slide-info">
+                            <img src="./assets/img/certificados/certificado-2.jpeg" alt="Certificado 2"
+                                class="slide-info">
+                            <img src="./assets/img/certificados/certificado-3.jpeg" alt="Certificado 3"
+                                class="slide-info">
+                            <img src="./assets/img/certificados/certificado-4.jpeg" alt="Certificado 4"
+                                class="slide-info">
+                            <img src="./assets/img/certificados/certificado-5.jpeg" alt="Certificado 5"
+                                class="slide-info">
+                            <img src="./assets/img/certificados/certificado-6.jpeg" alt="Certificado 6"
+                                class="slide-info">
+                            <img src="./assets/img/certificados/certificado-7.jpeg" alt="Certificado 7"
+                                class="slide-info">
+                            <img src="./assets/img/certificados/certificado-8.jpeg" alt="Certificado 8"
+                                class="slide-info">
+                            <img src="./assets/img/certificados/certificado-9.jpeg" alt="Certificado 9"
+                                class="slide-info">
+                            <!-- Agrega más imágenes aquí -->
+                        </div>
+                    </div>
+
+                    <div id="clases" class="category-info">
+                        <div class="slider-info">
+                            <img src="./assets/img/embalse/embalse-1.jpeg" alt="Clase Embalse, Cordoba."
+                                title="Clase en Embasle, Cordoba." class="slide-info">
+                            <img src="./assets/img/embalse/embalse-2.jpeg" alt="Clase Embalse, Cordoba."
+                                title="Clase en Embasle, Cordoba." class="slide-info">
+                            <img src="./assets/img/embalse/embalse-8.jpeg" alt="Clase Embalse, Cordoba."
+                                title="Clase en Embasle, Cordoba." class="slide-info">
+                            <img src="./assets/img/embalse/embalse-7.jpeg" alt="Clase Embalse, Cordoba."
+                                title="Clase en Embasle, Cordoba." class="slide-info">
+                            <img src="./assets/img/embalse/embalse-5.jpeg" alt="Clase Embalse, Cordoba."
+                                title="Clase en Embasle, Cordoba." class="slide-info">
+                            <img src="./assets/img/embalse/embalse-6.jpeg" alt="Clase Embalse, Cordoba."
+                                title="Clase en Embasle, Cordoba." class="slide-info">
+                            <img src="./assets/img/embalse/embalse-9-alumnas.jpeg" alt="Clase Embalse, Cordoba."
+                                title="Clase en Embasle, Cordoba." class="slide-info">
+
+                            <!-- Agrega más imágenes aquí -->
+                        </div>
+                    </div>
+
+                    <div id="eventos" class="category-info">
+                        <div class="slider-info">
+                            <img src="./assets/img/eventos/evento-1.jpeg" alt="Evento" title="Evento"
+                                class="slide-info">
+                            <img src="./assets/img/eventos/evento-2.jpeg" alt="Evento" title="Evento"
+                                class="slide-info">
+                            <img src="./assets/img/eventos/evento-4.jpeg" alt="Evento" title="Evento"
+                                class="slide-info">
+                            <img src="./assets/img/eventos/evento-5.jpeg" alt="Evento" title="Evento"
+                                class="slide-info">
+                            <img src="./assets/img/eventos/evento-6.jpeg" alt="Evento" title="Evento"
+                                class="slide-info">
+                            <img src="./assets/img/eventos/evento-7.jpeg" alt="Evento" title="Evento"
+                                class="slide-info">
+                            <img src="./assets/img/eventos/evento-3.jpeg" alt="Evento" title="Evento"
+                                class="slide-info">
+                            <!-- Agrega más imágenes aquí -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="fraseAnandaContainer">
+        <div id="fraseAnanda">
+            <img src="./assets/img/background/diseño-tipo-mandalas.jpeg" id="fraseAnandaImg" alt="Fondo meditacion">
+            <p>"El que ve la presencia divina en cada ser y actúa con amor y compasión, sin distinción entre uno y otro,
+                ha alcanzado la verdadera realización espiritual. Para él, todos los seres son iguales, y la unidad con
+                lo divino es la realidad última que experimenta y vive." - Bhagavad Gita 6.29
+            </p>
+        </div>
+    </div>
+
+    <footer id="footerContainer">
+        <div id="footerLinks">
+            <ul>
+                <li>
+                    <a href="./index.html" title="Inicio">Inicio</a>
+                </li>
+                <li>
+                    <a href="#servicios" title="Servicios">Servicios</a>
+                </li>
+                <li>
+                    <a href="#valores" title="Nosotros">Nosotros</a>
+                </li>
+                <li>
+                    <a href="#contactoTitle" title="Contacto">Contacto</a>
+                </li>
+            </ul>
+        </div>
+        <div id="footerLogo">
+            <a href="./index.html">
+                <img src="./assets/logo/logo.png" alt="Ananda Yoga" title="Ananda Yoga">
+            </a>
+        </div>
+    </footer>
+
+
+</body>
+
+<script src="./assets/scripts/nav.js"></script>
+<script src="./assets/scripts/audioPlayer.js"></script>
+<script src="./assets/scripts/modal.js"></script>
+<script src="./assets/scripts/slider.js"></script>
+<script src="./assets/scripts/infoCard.js"></script>
+
+
+
+</html>
