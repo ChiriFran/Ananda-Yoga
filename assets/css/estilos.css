@@ -567,10 +567,48 @@ article {
     width: 67%;
     margin: 3rem auto;
     background-color: var(--main-color-light);
-    padding: 5% 0;
+    padding: 2% 0;
+}
+
+
+.container-info::before {
+    content: '';
+    position: absolute;
+    top: -2rem;
+    left: -2rem;
+    width: 60px;
+    height: 60px;
+    background-image: url(../icons/sri-yantra.svg);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    z-index: 10;
 }
 
 .container-info::after {
+    content: '';
+    position: absolute;
+    bottom: -1.5rem;
+    right: -1.5rem;
+    width: 60px;
+    height: 60px;
+    transform: rotate(-25deg);
+    background-image: url(../icons/flor-2.svg);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    z-index: 10;
+}
+
+.left-info {
+    position: relative;
+    width: 40%;
+    background-color: var(--main-color-light);
+    margin: 2rem 2rem;
+}
+
+
+.left-info::after {
     content: '';
     position: absolute;
     bottom: -20%;
@@ -584,12 +622,6 @@ article {
     z-index: 10;
 }
 
-.left-info {
-    width: 40%;
-    background-color: var(--main-color-light);
-    margin: 2rem 2rem;
-}
-
 .container-info-title {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
@@ -600,8 +632,9 @@ article {
 .container-info-subtitle {
     color: var(--main-color);
     background-color: var(--main-color-light);
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: 0.5rem;
+    opacity: 0.8;
 }
 
 .grid-info {
@@ -626,10 +659,16 @@ article {
     z-index: 100;
 }
 
+/* Estilo para hover */
 .grid-item-info:hover {
     background-color: var(--main-color);
     color: var(--main-color-light);
-    transition: .3s;
+}
+
+/* Estilo para el botón activo */
+.grid-item-info.active-category {
+    background-color: var(--main-color);
+    color: var(--main-color-light);
 }
 
 .right-info {
@@ -674,6 +713,7 @@ article {
 }
 
 .slider-info {
+    position: relative;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -684,16 +724,26 @@ article {
     background-color: var(--main-color-light);
 }
 
-.slide-info {
+.slider-info::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    background-color: rgba(191, 104, 226, 0.15);
+}
+
+.slide-info {
+    width: 90%;
+    height: 90%;
+    margin: 1rem 1rem;
+    object-fit: contain;
     display: none;
 }
 
 .slide-info.active-info {
     display: block;
-    padding: 1rem 1rem;
     background-color: var(--main-color-light);
 }
 
@@ -937,12 +987,32 @@ article {
         width: 90%;
     }
 
+
+    .container-info::before {
+        top: -2rem;
+        left: -1rem;
+    }
+
     .container-info::after {
+        bottom: -1rem;
+        right: -1rem;
+    }
+
+    .slide-info {
+        width: 100%;
+        height: 100%;
+    }
+
+    .left-info::after {
         display: none;
     }
 
-    .left-info{
+    .left-info {
         margin: 0.5rem 0.5rem;
+    }
+
+    .right-info{
+        padding: 0 0;
     }
 
     .left-info,
@@ -950,7 +1020,12 @@ article {
         width: auto;
     }
 
-    .grid-info{
+    .grid-info {
+        width: 100%;
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+        user-select: none;color: #000;
         margin-top: 2rem;
     }
 

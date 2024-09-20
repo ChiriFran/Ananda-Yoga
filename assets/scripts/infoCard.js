@@ -1,5 +1,5 @@
 let currentSlide = 0;
-let currentCategory = 'certificados'; // Guardar la categoría actual
+let currentCategory = 'eventos'; // Guardar la categoría actual
 
 function showCategory(category) {
     // Actualizar la categoría activa
@@ -11,6 +11,12 @@ function showCategory(category) {
     });
     document.querySelector(`#${category}`).classList.add('active-info');
 
+    // Remover la clase activa de todos los botones y agregarla al botón seleccionado
+    document.querySelectorAll('.grid-item-info').forEach(item => {
+        item.classList.remove('active-category');
+    });
+    document.querySelector(`.grid-item-info[onclick="showCategory('${category}')"]`).classList.add('active-category');
+
     // Actualizar el título de la categoría
     updateCategoryTitle();
 
@@ -18,6 +24,7 @@ function showCategory(category) {
     currentSlide = 0;
     updateSlides(category);
 }
+
 
 function updateCategoryTitle() {
     // Obtener el nombre correcto para mostrar
@@ -69,5 +76,5 @@ function prevSlide() {
 // Esperar a que el DOM esté completamente cargado antes de ejecutar el script
 document.addEventListener('DOMContentLoaded', () => {
     // Inicializar la primera categoría al cargar la página
-    showCategory('clases');
+    showCategory('eventos');
 });
