@@ -1,5 +1,5 @@
 let currentSlide = 0;
-let currentCategory = 'eventos'; // Guardar la categoría actual
+let currentCategory = 'certificados'; // Guardar la categoría actual
 
 function showCategory(category) {
     // Actualizar la categoría activa

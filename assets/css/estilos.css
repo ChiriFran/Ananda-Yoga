@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     background-color: var(--main-color);
+    font-family: var(--font-family);
 }
 
 
@@ -11,7 +12,7 @@
     --main-color-light: #efe5f6;
     --main-color-yellow: #cbb32b;
     --main-color-black: #000000;
-    --font-family: 'san-serif';
+    --font-family: sans-serif;
 }
 
 ::selection {
@@ -65,7 +66,7 @@
 #navMenu ul li a {
     text-decoration: none;
     color: var(--main-color-light);
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-family: var(--font-family);
     position: relative;
 }
@@ -354,16 +355,17 @@ span {
 }
 
 .slide-content h2 {
-    font-size: 4rem;
+    font-size: 2.2rem;
     font-weight: 900;
     font-style: oblique;
     margin-top: 2rem;
 }
 
 .slide-content p {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 600;
     font-style: oblique;
+    margin-top: 12px;
 }
 
 .slide-content a {
@@ -380,8 +382,10 @@ span {
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 10px;
-    background-color: transparent;
+    gap: 20px;
+    background-color: #efe5f6dd;
+    border-radius: 5px;
+    padding: 0.5rem 1.5rem;
     z-index: 100;
 }
 
@@ -394,7 +398,6 @@ span {
     cursor: pointer;
     opacity: 0.6;
     transition: background-color 0.3s ease, opacity 0.3s ease;
-    /* Transición suave para los puntos */
 }
 
 .dot.active {
@@ -402,10 +405,9 @@ span {
     opacity: 1;
 }
 
-/* Animación de transición */
+/* Animación de slider */
 .hero-slide {
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-    /* Transiciones suaves para desplazamiento y opacidad */
 }
 
 /* BIENVENIDA */
@@ -459,9 +461,9 @@ span {
 #bienvenidaText p {
     background-color: var(--main-color-light);
     font-style: oblique;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 #bienvenidaText a {
@@ -814,7 +816,7 @@ article {
 
 #fraseAnanda p {
     width: 80%;
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: 600;
     line-height: 1.2;
     z-index: 1000;
