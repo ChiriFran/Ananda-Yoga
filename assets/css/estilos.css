@@ -934,6 +934,7 @@ article {
     #navIcon {
         display: block;
         z-index: 1000;
+        color: var(--main-color-light);
     }
 
     #closeNavIcon {
