@@ -409,8 +409,113 @@ span {
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
+/* MODAL */
+body.modal-open {
+    overflow: hidden;
+}
+
+.modal {
+    width: 60%;
+    min-height: 40%;
+    border: none;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #aa8fd6;
+    position: relative;
+    margin: auto;
+    animation: modal-in 0.3s ease forwards;
+}
+
+.modal::backdrop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+}
+
+.modal-content {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--main-color-light);
+}
+
+.btn-close-modal-container {
+    display: flex;
+    flex-flow: column;
+    align-items: end;
+    justify-content: center;
+    width: 100%;
+}
+
+.btn-open-modal {
+    color: var(--main-color-light);
+    font-size: 1rem;
+}
+
+.btn-close-modal {
+    padding: 10px 20px;
+    background-color: transparent;
+    color: var(--main-color-light);
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+
+.btn-open-modal,
+.btn-close-modal {
+    cursor: pointer;
+    border: none;
+}
+
+.modalTitle {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 1rem 0;
+}
+
+.modalImg {
+    width: 500px;
+    margin: 1rem 0;
+}
+
+@keyframes modal-in {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes modal-out {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+.modal[closing] {
+    animation: modal-out 0.3s ease forwards;
+}
+
+
 /* BIENVENIDA */
 #bienvenidaContainer {
+    position: relative;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -424,8 +529,18 @@ span {
     position: relative;
     width: 84%;
     padding: 2rem 2rem;
-    background-color: var(--main-color-light);
+    background-color: transparent;
     color: var(--main-color);
+    z-index: 100;
+}
+
+#bienvenidaImg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
 }
 
 #bienvenidaText::before {
@@ -458,15 +573,18 @@ span {
 
 
 #bienvenidaText p {
-    background-color: var(--main-color-light);
+    background-color: transparent;
     font-style: oblique;
     font-size: 1.2rem;
     font-weight: 700;
-    margin-bottom: 1rem;
 }
 
 #bienvenidaText a {
     text-decoration: none;
+}
+
+#bienvenidaText > p{
+    margin-bottom: 1rem;
 }
 
 #bienvenidaRedes a {
@@ -567,8 +685,17 @@ article {
     display: flex;
     width: 67%;
     margin: 3rem auto;
-    background-color: var(--main-color-light);
+    background-color: transparent;
     padding: 2% 0;
+}
+
+.container-info-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
 }
 
 
@@ -604,7 +731,7 @@ article {
 .left-info {
     position: relative;
     width: 40%;
-    background-color: var(--main-color-light);
+    background-color: transparent;
     margin: 2rem 2rem;
 }
 
@@ -624,31 +751,34 @@ article {
 }
 
 .container-info-title {
+    display: inline;
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
+    padding: 0.3rem 1rem;
     color: var(--main-color);
-    background-color: var(--main-color-light);
+    background-color: transparent;
 }
 
 .container-info-subtitle {
     color: var(--main-color);
-    background-color: var(--main-color-light);
+    background-color: transparent;
     font-size: 1rem;
     margin-bottom: 0.5rem;
+    margin-left: 0.5rem;
+    padding: 0.3rem 1rem;
     opacity: 0.8;
 }
 
 .grid-info {
     display: flex;
     gap: 10px;
-    background-color: var(--main-color-light);
+    background-color: transparent;
     z-index: 100;
 }
 
 .grid-item-info {
     flex: 1;
     padding: 5px 10px;
-    margin: 0.2rem 0.5rem;
     background-color: var(--main-color-light);
     color: var(--main-color);
     font-size: 1rem;
@@ -679,24 +809,26 @@ article {
 }
 
 .category-header-info {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0 3rem;
-    background-color: var(--main-color-light);
+    background-color: transparent;
+    z-index: 1000;
 }
 
 #category-title-info {
     color: var(--main-color);
-    background-color: var(--main-color-light);
+    background-color: transparent;
 }
 
 .arrow-info {
-    background-color: var(--main-color-light);
+    background-color: rgba(191, 104, 226, 0.15);
     color: var(--main-color);
     border: none;
     cursor: pointer;
-    padding: 5px 5px;
+    padding: 0 1rem;
     font-size: 2rem;
 }
 
@@ -722,7 +854,7 @@ article {
     width: 100%;
     height: 400px;
     overflow: hidden;
-    background-color: var(--main-color-light);
+    background-color: transparent;
 }
 
 .slider-info::after {
@@ -745,7 +877,7 @@ article {
 
 .slide-info.active-info {
     display: block;
-    background-color: var(--main-color-light);
+    background-color: transparent;
 }
 
 .container-info>ul {
@@ -903,7 +1035,7 @@ article {
 
 @media screen and (max-width: 700px) {
     #logoImg {
-        width: 200px;
+        width: 150px;
         height: auto;
     }
 
@@ -940,7 +1072,7 @@ article {
 
     #closeNavIcon {
         display: block;
-        font-size: 1rem;
+        font-size: 1.5rem;
         color: var(--main-color-light);
     }
 
@@ -948,8 +1080,23 @@ article {
         right: 0;
     }
 
-    .slide-content h2 {
-        font-size: 2rem;
+    /* modal */
+
+    .btn-open-modal {
+        font-size: 1.2rem;
+    }
+
+    .modal {
+        width: 100%;
+    }
+
+    .modalTitle {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .modalImg {
+        width: 320px;
     }
 
     #bienvenidaContainer {
@@ -1004,6 +1151,10 @@ article {
         right: -1rem;
     }
 
+    .slide-content h2 {
+        font-size: 2rem;
+    }
+
     .slide-info {
         width: 100%;
         height: 100%;
@@ -1017,7 +1168,7 @@ article {
         margin: 0.5rem 0.5rem;
     }
 
-    .right-info{
+    .right-info {
         padding: 0 0;
     }
 
@@ -1031,12 +1182,14 @@ article {
         display: flex;
         flex-flow: row;
         align-items: center;
-        user-select: none;color: #000;
+        user-select: none;
+        color: #000;
         margin-top: 2rem;
     }
 
     #fraseAnanda::after {
         width: 250px;
+        top: -10%;
     }
 
     #fraseAnanda p {

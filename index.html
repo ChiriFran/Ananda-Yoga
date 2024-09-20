@@ -43,6 +43,7 @@
             <ul>
                 <li><a href="#Yoga" title="Servicios">Yoga & Meditacion</a></li>
                 <li><a href="#valores" title="Valores">Clases & Eventos</a></li>
+                <li><button class="btn-open-modal">Prox encuentro</button></li>
             </ul>
             <div class="audio-player">
                 <audio id="audio" preload="metadata" src="./assets/meditacion/Meditación.mp3"></audio>
@@ -54,6 +55,15 @@
             </div>
 
         </nav>
+        <dialog class="modal" id="myModal">
+            <div class="modal-content">
+                <div class="btn-close-modal-container">
+                    <button class="btn-close-modal">X</button>
+                </div>
+                <h3 class="modalTitle">¡Te invitamos a disfrutar de nuestro proximo encuentro!</h3>
+                <img class="modalImg" src="./assets/img/background/prox-encuentro.png" alt="Tareta de evento 26/10" title="Encuentro 26/10">
+            </div>
+        </dialog>
         <div id="navIcon" class="bi bi-list"></div>
     </header>
 
@@ -93,6 +103,7 @@
 
     <div id="bienvenidaContainer">
         <div id="bienvenidaText">
+            <img id="bienvenidaImg" src="./assets/img/background/yoga-background.png" alt="Efecto de fondo">
             <p>¡Bienvenidos a Ananda Yoga! Soy Laura, y me emociona abrir este espacion donde el yoga y la meditacion se
                 encuentran para guiarnos hacie el equilibrio y la paz interior.</p>
             <p>Aqui podras encontrar consejos practicos, reflexiones y recursos tanto para tu practica de yoga como
@@ -149,9 +160,10 @@
 
     <div id="informacionPersonalContainer">
         <div class="container-info">
+            <img class="container-info-img" src="./assets/img/background/yoga-background.png" alt="Efecto de fondo">
             <div class="left-info">
                 <h1 class="container-info-title">Laura Valiconto</h1>
-                <h2 class="container-info-subtitle">Instructora de Yoga</h2>
+                <h2 class="container-info-subtitle">Profesora de Yoga</h2>
                 <div class="grid-info">
                     <div class="grid-info">
                         <button class="grid-item-info" onclick="showCategory('eventos')">Eventos</button>
