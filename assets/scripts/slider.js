@@ -3,16 +3,15 @@ const slideIntervalTime = 5000; // Cambia de slide cada 5 segundos
 let slideTimer; // Variable para el temporizador
 
 // Inicializar el slider
-// Mostrar el primer slide después de un pequeño retraso (ej. 500ms)
 function initSlider() {
     setTimeout(() => {
         showSlide(currentSlideIndex);
         startAutoSlide(); // Iniciar el temporizador automático
-    }, 500); // Agrega un pequeño retraso para la primera diapositiva
+    }, 200); // Agrega un pequeño retraso para la primera diapositiva
 }
 
 // Función para cambiar al slide actual
-function setCurrentSlide(n) {
+function currentSlide(n) {
     currentSlideIndex = n;
     resetSlideTimer(); // Reiniciar el temporizador manualmente
     showSlide(currentSlideIndex);
