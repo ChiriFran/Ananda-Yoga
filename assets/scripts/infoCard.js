@@ -1,80 +1,72 @@
-let currentSlide = 0;
-let currentCategory = 'eventos'; // Guardar la categoría actual
+(function () {
+    let currentSlide = 0;
+    let currentCategory = 'eventos';
 
-function showCategory(category) {
-    // Actualizar la categoría activa
-    currentCategory = category;
-
-    // Ocultar todas las categorías y mostrar la seleccionada
-    document.querySelectorAll('.category-info').forEach(cat => {
-        cat.classList.remove('active-info');
-    });
-    document.querySelector(`#${category}`).classList.add('active-info');
-
-    // Remover la clase activa de todos los botones y agregarla al botón seleccionado
-    document.querySelectorAll('.grid-item-info').forEach(item => {
-        item.classList.remove('active-category');
-    });
-    document.querySelector(`.grid-item-info[onclick="showCategory('${category}')"]`).classList.add('active-category');
-
-    // Actualizar el título de la categoría
-    updateCategoryTitle();
-
-    // Reiniciar el slide y actualizar las imágenes
-    currentSlide = 0;
-    updateSlides(category);
-}
-
-
-function updateCategoryTitle() {
-    // Obtener el nombre correcto para mostrar
-    const titles = {
-        certificados: 'Certificados',
-        clases: 'Clases',
-        eventos: 'Eventos'
-    };
-    const categoryTitle = titles[currentCategory] || 'Categoría';
-    document.getElementById('category-title-info').textContent = categoryTitle;
-}
-
-function updateSlides(category) {
-    const slides = document.querySelectorAll(`#${category} .slide-info`);
-    slides.forEach((slide, index) => {
-        slide.classList.remove('active-info');
-        if (index === currentSlide) {
-            slide.classList.add('active-info');
-        }
-    });
-}
-
-function nextSlide() {
-    const slides = document.querySelectorAll(`#${currentCategory} .slide-info`);
-    if (slides.length > 0) {
-        // Avanzar al siguiente slide, si no es el último
-        currentSlide++;
-        if (currentSlide >= slides.length) {
-            currentSlide = slides.length - 1; // Limitar al último slide
-        }
-        updateSlides(currentCategory);
+    function showCategory(category) {
+        currentCategory = category;
+        document.querySelectorAll('.category-info').forEach(cat => {
+            cat.classList.remove('active-info');
+        });
+        document.querySelector(`#${category}`).classList.add('active-info');
+        document.querySelectorAll('.grid-item-info').forEach(item => {
+            item.classList.remove('active-category');
+        });
+        document.querySelector(`.grid-item-info[onclick="showCategory('${category}')"]`).classList.add('active-category');
         updateCategoryTitle();
+        currentSlide = 0;
+        updateSlides(category);
     }
-}
 
-function prevSlide() {
-    const slides = document.querySelectorAll(`#${currentCategory} .slide-info`);
-    if (slides.length > 0) {
-        // Retroceder al slide anterior, si no es el primero
-        currentSlide--;
-        if (currentSlide < 0) {
-            currentSlide = 0; // Limitar al primer slide
+    function updateCategoryTitle() {
+        const titles = {
+            certificados: 'Certificados',
+            clases: 'Clases',
+            eventos: 'Eventos'
+        };
+        const categoryTitle = titles[currentCategory] || 'Categoría';
+        document.getElementById('category-title-info').textContent = categoryTitle;
+    }
+
+    function updateSlides(category) {
+        const slides = document.querySelectorAll(`#${category} .slide-info`);
+        slides.forEach((slide, index) => {
+            slide.classList.remove('active-info');
+            if (index === currentSlide) {
+                slide.classList.add('active-info');
+            }
+        });
+    }
+
+    function nextSlide() {
+        const slides = document.querySelectorAll(`#${currentCategory} .slide-info`);
+        if (slides.length > 0) {
+            currentSlide++;
+            if (currentSlide >= slides.length) {
+                currentSlide = slides.length - 1;
+            }
+            updateSlides(currentCategory);
+            updateCategoryTitle();
         }
-        updateSlides(currentCategory);
-        updateCategoryTitle();
     }
-}
 
-// Esperar a que el DOM esté completamente cargado antes de ejecutar el script
-document.addEventListener('DOMContentLoaded', () => {
-    // Inicializar la primera categoría al cargar la página
-    showCategory('eventos');
-});
+    function prevSlide() {
+        const slides = document.querySelectorAll(`#${currentCategory} .slide-info`);
+        if (slides.length > 0) {
+            currentSlide--;
+            if (currentSlide < 0) {
+                currentSlide = 0;
+            }
+            updateSlides(currentCategory);
+            updateCategoryTitle();
+        }
+    }
+
+    // Expose functions globally
+    window.showCategory = showCategory;
+    window.nextSlide = nextSlide;
+    window.prevSlide = prevSlide;
+
+    document.addEventListener('DOMContentLoaded', () => {
+        showCategory('eventos');
+    });
+})();

@@ -1,78 +1,77 @@
-let currentSlideIndex = 1;
-const slideIntervalTime = 5000; // Cambia de slide cada 5 segundos
-let slideTimer; // Variable para el temporizador
-
-// Inicializar el slider
-function initSlider() {
-    setTimeout(() => {
-        showSlide(currentSlideIndex);
-        startAutoSlide(); // Iniciar el temporizador automático
-    }, 200); // Agrega un pequeño retraso para la primera diapositiva
-}
-
-// Función para cambiar al slide actual
-function currentSlide(n) {
-    currentSlideIndex = n;
-    resetSlideTimer(); // Reiniciar el temporizador manualmente
-    showSlide(currentSlideIndex);
-}
-
-// Función para avanzar al siguiente slide
-function nextSlide() {
-    currentSlideIndex++;
-    if (currentSlideIndex > document.querySelectorAll(".hero-slide").length) {
-        currentSlideIndex = 1;
-    }
-    showSlide(currentSlideIndex);
-}
-
-// Función para retroceder al slide anterior
-function prevSlide() {
-    currentSlideIndex--;
-    if (currentSlideIndex < 1) {
-        currentSlideIndex = document.querySelectorAll(".hero-slide").length;
-    }
-    showSlide(currentSlideIndex);
-}
-
-// Mostrar el slide basado en el índice
-function showSlide(n) {
-    const slides = document.querySelectorAll(".hero-slide");
-    const dots = document.querySelectorAll(".dot");
-
-    // Remover clases de todas las diapositivas
-    slides.forEach((slide) => {
-        slide.classList.remove("active", "prev");
-    });
-    dots.forEach((dot) => dot.classList.remove("active"));
-
-    // Establecer el slide actual
-    const currentSlide = slides[n - 1];
-    currentSlide.classList.add("active");
-
-    // Establecer el slide anterior (para mover hacia la izquierda)
-    if (n > 1) {
-        const prevSlide = slides[n - 2];
-        prevSlide.classList.add("prev");
-    } else {
-        const prevSlide = slides[slides.length - 1];
-        prevSlide.classList.add("prev");
+class Slider {
+    constructor(slideSelector, dotSelector, intervalTime = 5000) {
+        this.slides = document.querySelectorAll(slideSelector);
+        this.dots = document.querySelectorAll(dotSelector);
+        this.currentSlideIndex = 1;
+        this.intervalTime = intervalTime;
+        this.slideTimer = null;
     }
 
-    // Actualizar el dot activo
-    dots[n - 1].classList.add("active");
-}
+    init() {
+        // Mostrar el primer slide después de un pequeño retraso
+        setTimeout(() => {
+            this.showSlide(this.currentSlideIndex);
+            this.startAutoSlide(); // Iniciar el temporizador automático
+        }, 200);
+    }
 
-// Iniciar el temporizador automático del slider
-function startAutoSlide() {
-    slideTimer = setInterval(nextSlide, slideIntervalTime);
-}
+    currentSlide(n) {
+        this.currentSlideIndex = n;
+        this.resetSlideTimer(); // Reiniciar el temporizador manualmente
+        this.showSlide(this.currentSlideIndex);
+    }
 
-// Reiniciar el temporizador cuando el usuario cambia manualmente
-function resetSlideTimer() {
-    clearInterval(slideTimer); // Detener el temporizador actual
-    startAutoSlide(); // Reiniciar el temporizador desde la diapositiva actual
-}
+    nextSlide() {
+        this.currentSlideIndex++;
+        if (this.currentSlideIndex > this.slides.length) {
+            this.currentSlideIndex = 1;
+        }
+        this.showSlide(this.currentSlideIndex);
+    }
 
-// Iniciar el slider al cargar
-initSlider();
+    prevSlide() {
+        this.currentSlideIndex--;
+        if (this.currentSlideIndex < 1) {
+            this.currentSlideIndex = this.slides.length;
+        }
+        this.showSlide(this.currentSlideIndex);
+    }
+
+    showSlide(n) {
+        // Remover clases de todas las diapositivas
+        this.slides.forEach((slide) => slide.classList.remove("active", "prev"));
+        this.dots.forEach((dot) => dot.classList.remove("active"));
+
+        // Establecer el slide actual
+        const currentSlide = this.slides[n - 1];
+        currentSlide.classList.add("active");
+
+        // Establecer el slide anterior (para animación hacia la izquierda)
+        if (n > 1) {
+            const prevSlide = this.slides[n - 2];
+            prevSlide.classList.add("prev");
+        } else {
+            const prevSlide = this.slides[this.slides.length - 1];
+            prevSlide.classList.add("prev");
+        }
+
+        // Actualizar el dot activo
+        this.dots[n - 1].classList.add("active");
+    }
+
+    startAutoSlide() {
+        this.slideTimer = setInterval(() => this.nextSlide(), this.intervalTime);
+    }
+
+    resetSlideTimer() {
+        clearInterval(this.slideTimer); // Detener el temporizador actual
+        this.startAutoSlide(); // Reiniciar el temporizador desde la diapositiva actual
+    }
+}
+let slider; // Hacer que la variable slider sea global
+
+document.addEventListener('DOMContentLoaded', () => {
+    slider = new Slider(".hero-slide", ".dot");
+    slider.init();
+});
+

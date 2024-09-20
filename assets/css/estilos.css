@@ -355,7 +355,7 @@ span {
 }
 
 .slide-content h2 {
-    font-size: 2.2rem;
+    font-size: 3rem;
     font-weight: 900;
     font-style: oblique;
     margin-top: 2rem;
@@ -946,6 +946,10 @@ article {
 
     #navMenu.active {
         right: 0;
+    }
+
+    .slide-content h2 {
+        font-size: 2rem;
     }
 
     #bienvenidaContainer {
