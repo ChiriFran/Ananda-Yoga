@@ -4,6 +4,7 @@
     box-sizing: border-box;
     background-color: var(--main-color);
     font-family: var(--font-family);
+    scroll-behavior: smooth;
 }
 
 
@@ -685,7 +686,7 @@ article {
     position: relative;
     display: flex;
     width: 67%;
-    margin: 3rem auto;
+    margin: 5rem auto;
     background-color: transparent;
     padding: 2% 0;
 }
