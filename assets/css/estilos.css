@@ -1264,6 +1264,8 @@ article {
 
     #footerLogo {
         order: 3;
+        align-items: center;
+        justify-content: center;
     }
 
     #footerRedes img {
