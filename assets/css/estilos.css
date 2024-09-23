@@ -270,6 +270,11 @@ span {
     color: #333;
 }
 
+#slash{
+    color: var(--main-color);
+    background-color: var(--main-color-light);
+}
+
 /* Slider Styles */
 .hero-slider {
     position: relative;
@@ -1249,6 +1254,10 @@ article {
         padding: 10% 5%;
     }
 
+    #footerLinks ul li a {
+        font-size: 1rem;
+    }
+
     #footerLinks {
         order: 2;
     }
@@ -1262,13 +1271,17 @@ article {
         margin: 10% 0;
     }
 
+    #footerNewsletterTitle {
+        font-size: 1rem;
+    }
+
     #footerLogo {
         order: 3;
         align-items: center;
         justify-content: center;
     }
 
-    #footerRedes img {
-        width: 20px;
+    #footerLogo img {
+        width: 90%;
     }
 }
