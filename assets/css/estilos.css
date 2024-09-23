@@ -270,9 +270,6 @@ span {
     color: #333;
 }
 
-/* dialog */
-
-
 /* Slider Styles */
 .hero-slider {
     position: relative;
@@ -482,7 +479,7 @@ body.modal-open {
 }
 
 .modalImg {
-    width: 500px;
+    width: 400px;
     margin: 1rem 0;
 }
 
