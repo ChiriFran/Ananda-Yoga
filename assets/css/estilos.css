@@ -475,9 +475,10 @@ body.modal-open {
 }
 
 .modalTitle {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 800;
     margin: 1rem 0;
+    text-align: center;
 }
 
 .modalImg {
@@ -688,7 +689,7 @@ article {
     width: 67%;
     margin: 5rem auto;
     background-color: transparent;
-    padding: 2% 0;
+    padding: 2% 2%;
 }
 
 .container-info-img {
@@ -1094,7 +1095,6 @@ article {
 
     .modalTitle {
         font-size: 1.5rem;
-        text-align: center;
     }
 
     .modalImg {
@@ -1140,6 +1140,7 @@ article {
     .container-info {
         flex-flow: column;
         width: 90%;
+        padding: 0 0;
     }
 
 
